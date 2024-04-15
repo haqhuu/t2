@@ -1,0 +1,38 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+void swap (int *a, int *b)
+{
+	int tmp;
+	tmp = *a;
+	*a = *b;
+	*b = tmp;
+}
+
+int main()
+{
+	int size = 5;
+	int *a = (int*)malloc(size*sizeof(int));
+	int left = 0, right = size;
+	
+	printf("Input the 5 members of the array:\n");
+	for (int i = 0; i < size; i++)
+	{
+		scanf("%d", &a[i]);
+	}
+	
+	for (int left = 0; left < right; left ++)
+	{
+		swap(&a[left], &a[right-1]);
+		right--;
+	}
+	
+	for(int i = 0; i < size; i++)
+	{
+		printf("array_n[%i] = %d\n", i, a[i]);
+	}
+	
+	void free(void *a);
+	
+	return 0;
+}
