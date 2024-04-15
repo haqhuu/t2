@@ -1,0 +1,22 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+	int size = 5;
+	float *arr = (float*)malloc(size*sizeof(float));
+	
+	printf("Inpput the 5 members of the array:\n");
+	for(int i = 0; i < size; i++)
+	{
+		scanf("%f", &arr[i]);
+	}
+	for (int i = 0; i < size; i++)
+	{
+		if (arr[i] < 5)
+			printf("A[%d] = %.1f\n", i, arr[i]);
+	}
+	void free(void *arr);
+	
+	return 0;
+}
