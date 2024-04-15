@@ -1,0 +1,35 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <stdbool.h>
+
+int main()
+{
+	int sum = 0, cnt = 0;
+	float avg;
+	bool resume  = true;
+	
+	int *arr =(int*)malloc(sizeof(int));
+		
+	printf("Input Mathemastics mark ( 0 to terminate): \n");
+
+	while (resume)
+	{
+		scanf("%d", &arr[cnt]);
+		if (arr[cnt] < 1)
+		{
+			resume = false;
+		}
+		else
+		{
+			sum += arr[cnt++];
+		}
+	}
+	
+	avg = (cnt != 0) ? (float) sum/cnt : 0.00;
+	
+	printf("Average marks in Mathematics: %.2f", avg);
+	
+	free(arr);
+	
+	return 0;
+}
