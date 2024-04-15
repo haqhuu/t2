@@ -1,0 +1,34 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <limits.h>
+
+int main()
+{
+	int size;
+	int min = INT_MAX;
+	int index = 0;
+	
+	printf("Input the length of the array: ");
+	scanf("%d", &size);
+	
+	size = 5;
+	
+	int *a = (int*)malloc(size*sizeof(int));
+		
+	printf("Input the array elements:\n");
+	for( int i = 0; i < size; i++)
+	{
+		scanf("%d", &a[i]);
+		if (a[i] < min)
+		{
+			min = a[i];
+			index = i+1;
+		}
+	}
+	printf("Smallest value: %d\n", min);
+	printf("Position of the element: %d", index);
+	
+	void free(void *a);
+	
+	return 0;
+}
