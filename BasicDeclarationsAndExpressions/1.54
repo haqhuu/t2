@@ -1,0 +1,17 @@
+#include <stdio.h>
+
+int main()
+{
+	int p, r, t;
+	int simple_interest;
+	/* p = 10000, r = 10% , t = 12 year */
+	printf("Input Data: \n");
+	printf("p = "); scanf("%d", &p);
+	printf("r = %"); scanf("%d", &r);
+	printf("t = "); scanf("%d", &t);
+	
+	simple_interest = ((double) r/100 )*p * t;
+	printf("Input principle, Rate of interest & time to find simple interest:\nSimple interest = %d", simple_interest); 
+	
+  return 0;
+}
