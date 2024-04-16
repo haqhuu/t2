@@ -1,0 +1,38 @@
+#include <stdio.h>
+#include <limits.h>
+
+int main()
+{
+	int sum = 0, cnt = 0, done = 0, n;
+	int	min = INT_MAX;
+	int max = INT_MIN;
+	double avg;
+	
+	while(!done)
+	{
+		printf("Input next positive integer: ");
+		scanf("%d", &n);
+		if (n < 1){
+			done = 1;
+		} 
+		else
+		{
+			cnt++;
+			sum += n;
+			min = (n < min)? n: min;
+			max = (n < max)? max: n;	
+		}
+	}
+ 
+	avg = (cnt != 0) ? (double) sum / cnt : 0.00;
+	
+	printf("Number of positive values entered is %d", cnt);
+	printf("\n");
+	printf("Maximum value entered is %d", max);
+	printf("\n");
+	printf("Minimun value enterd is %d", min);
+	printf("\n");
+	printf("Average value is %.4lf", avg);
+	
+	return 0;
+}
