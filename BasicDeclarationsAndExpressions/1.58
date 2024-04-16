@@ -1,0 +1,24 @@
+#include <stdio.h>
+#include <float.h>
+#include <stdlib.h>
+
+int main()
+{	
+	int size = 4;
+	float max = FLT_MIN;
+	float min = FLT_MAX;
+	float *a = (float*)malloc(size*sizeof(float));
+
+	printf("Input four number: \n");
+	for ( int i = 0; i< size ; i++)
+	{
+		scanf("%f", &a[i]);
+		max = (a[i] > max) ? a[i] : max;
+		min = (a[i] < min) ? a[i] : min;
+	}
+	printf("Difference is %.4f", (max - min));
+	
+	void free(void *a);
+	
+	return 0;
+}
