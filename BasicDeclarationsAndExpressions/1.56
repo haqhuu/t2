@@ -1,0 +1,12 @@
+#include <stdio.h>
+
+int main()
+{
+	int n;
+	
+	printf("Read the integer from keyboard\n");
+	printf("Integer value:"); scanf("%d", &n);
+	printf("The left shifted data is %d", (n<<2));
+	
+	return 0;
+}
