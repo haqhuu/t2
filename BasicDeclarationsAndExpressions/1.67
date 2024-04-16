@@ -1,0 +1,26 @@
+//Write a C program to evaluate the equation y=x^n 
+//when n is a non-negative integer.
+
+#include <stdio.h>
+
+double power(double x, int n)
+{
+	if (n == 0)
+		return 1;	
+	return x * pow(x, n-1);
+}
+
+int main()
+{
+	int n;
+	double x, y;
+	
+	printf("Input the values of x and n:\n");
+	scanf("%lf%d", &x, &n);
+	
+	y = power (x, n);
+	
+	printf("%lf to power %d is %lf", x, n, y);
+	
+	return 0;
+}
