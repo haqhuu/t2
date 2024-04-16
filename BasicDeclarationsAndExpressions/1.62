@@ -1,0 +1,28 @@
+#include <stdio.h>
+
+int main()
+{
+	int n, sum = 0;
+	int loop = 1;
+	
+	while (loop)
+	{
+		printf("\nInput a positive number less than 500: ");
+		scanf("%d", &n);	
+		if ( n < 500)
+		{
+			loop = 0;
+		}
+	}
+	
+	printf("Sum of the digits of %d ", n);
+	while(n != 0)
+	{
+		sum += n%10;
+		n /= 10;
+	}
+	
+	printf("is %d", sum);
+	
+	return 0;
+}
