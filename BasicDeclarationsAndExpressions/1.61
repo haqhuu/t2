@@ -1,0 +1,21 @@
+#include <stdio.h>
+#include <math.h>
+
+int main()
+{
+	double x;
+	double angle;
+	
+	printf("Input value of x: ");
+	scanf("%lf", &x);
+	if (x ==0 )
+	{
+		printf("Infinitive!");
+		return 0;
+	}
+	
+	angle = (double) 1/x;
+	printf("value of sin(1/x) is %.4lf", sin(angle));
+	
+	return 0;
+}
