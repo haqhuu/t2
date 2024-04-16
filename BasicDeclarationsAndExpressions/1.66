@@ -11,6 +11,7 @@ int main()
 {
 	int n;
 	float ran;
+	char str;
 	
 	/* create fptr */
 	FILE * fptr = fopen("rand.dat", "w");
@@ -24,8 +25,24 @@ int main()
 	for (int i = 0; i < n; i++)
 	{
 		ran = RandFlt(-0.5, 0.5);
-		fprintf(fptr, "%.4f\n", ran);
+		fprintf(fptr, "%f\n", ran);
 	}
 	
+	fclose(fptr);
+	
+	/* read file */
+	fptr = fopen("rand.dat", "r");
+	str = fgetc(fptr);
+	
+	/* print the contents of file */
+	while (str != EOF )
+	{
+		printf("%c", str);
+		str = fgetc(fptr);
+	}
+	
+	fclose(fptr);
+	/* end read file */
+
 	return 0;
 }
