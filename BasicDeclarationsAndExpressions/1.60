@@ -1,0 +1,44 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+typedef enum{
+	MON, TUE, WED, THU, FRI, SAT, SUN
+} Week;
+
+int main()
+{	
+	char *str = (char *) malloc(sizeof(char));
+	
+	for(int i = MON; i <= SUN; i++)
+	{
+		switch(i)
+		{
+			case MON:
+				str = "MON";
+				break;
+			case TUE:
+				str = "TUE";
+				break;
+			case WED:
+				str = "WED";
+				break;
+			case THU:
+				str = "THU";
+				break;
+			case FRI:
+				str = "FRI";
+				break;
+			case SAT:
+				str = "SAT";
+				break;
+			default:
+				str = "SUN";
+		}
+		
+		printf("%s = %d\n", str, i);
+	}
+	
+	void free(void *str);
+	
+	return 0;
+}
