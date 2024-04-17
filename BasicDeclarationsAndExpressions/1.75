@@ -1,0 +1,34 @@
+#include <stdio.h>
+
+void print(char left, char right, int *nCharInALine)
+{
+	int i = left;
+	while (i >= (int) left && i <= (int) right)
+	{
+		if (*nCharInALine == 6)
+		{
+			printf("\n%d\t", i);
+			*nCharInALine = 0;
+		}
+		else
+			printf("%d\t", i);
+		i++;
+		*nCharInALine +=1;
+	}
+
+}
+
+int main(void)
+{
+	
+	printf("List of integer quivalents of letters (a-z, A-Z).\n");
+	printf("=================================================\n");
+	
+	int nCharInALine = 0;
+	print('a', 'z', &nCharInALine);
+	printf("%2d\t", ' ');
+	nCharInALine++;
+	print('A', 'Z', &nCharInALine);
+	
+	return 0;
+}
