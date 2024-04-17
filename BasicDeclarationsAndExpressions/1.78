@@ -1,0 +1,19 @@
+#include <stdio.h>
+
+int main(void)
+{
+	int x = 10;
+	
+	printf("Pre-decrementing:\n");
+	printf("x = %d\n", x);
+	printf("--x = %d\n", --x);
+	printf("x = %d\n\n", x);
+
+	x = 10;
+	
+	printf("Post-decrementing:\n");
+	printf("x = %d\n", x);
+	printf("x-- = %d\n", x--);
+	printf("x = %d", x);
+	return 0;
+}
