@@ -1,0 +1,83 @@
+// from big to smaller, smaller
+#include <stdio.h>
+
+int main()
+{   
+	// i is iteration, x is number
+	int i, x;
+	
+	printf("Decimal\t Roman\n");
+	printf("number\t numeral\n");
+	printf("-------------------\n");
+	
+	for(int i = 1; i <= 100; i++)
+	{
+		// get number
+		int x = i;
+		
+		printf("%d\t", x);
+	
+		if (x == 100)
+		{
+			printf("C");
+			x -= 100;
+			// complete
+			return 0;
+		}
+		
+		if (x >= 50)
+		{
+			// if x is 90..99, check print 90 OR 80, 70, 60
+			if (x/10 == 9 )
+			{
+				printf("XC");
+				x -= 90;	
+			} else {
+				printf("L");
+				x -= 50;	
+			}
+		}
+		
+		while( x >= 10)
+		{
+			// if x is 40..49, check print 40 OR 30, 20, 10
+			if( x/10 == 4)
+			{
+				printf("XL");
+				x -= 40;
+			} else {
+				printf("X");
+				x -= 10;
+			}	
+		}
+		
+		// if 4 < x < 10, check for print 9 or 5 
+		if ( x >= 5)
+		{
+			if( x%9 == 0 )
+			{
+				printf("IX");
+				x -= 9;
+			} else {
+				printf("V");
+				x -= 5;
+			}
+		}
+		
+		// if 0 < x < 10, check for print 4 or 3,2,1
+		while ( x > 0 )
+		{
+			if (x%4 == 0)
+			{
+				printf("IV");
+				x -= 4;
+			} else {
+				printf("I");
+				x -= 1;
+			}
+		}
+		
+		printf("\n");
+	}
+	
+}
