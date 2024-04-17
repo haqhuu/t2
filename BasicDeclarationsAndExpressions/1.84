@@ -1,0 +1,25 @@
+#include <stdio.h>
+
+int main(void)
+{	
+	int n = 0;
+	int sum = 0, cnt = 0;
+	bool done = false;
+	double avg;
+	
+	while ( true )
+	{
+		printf("Input each number on a seprate line (888 to exit):");
+		scanf("%d", &n);
+		if (n == 888)
+			break;
+		
+		sum += n;
+		cnt++;
+	}
+	printf("\n");
+	avg = (cnt) ? (double) sum / cnt : 0;
+	printf("The average value of the said numbers is: %.6lf", avg);
+	
+	return 0;
+}
