@@ -1,0 +1,28 @@
+#include <stdio.h>
+
+int main(void)
+{
+	double principal, rate, interest;
+	int days;
+	
+	printf("Input loan amount (0 to quit):");
+	scanf("%lf", &principal);
+
+	while ( principal != 0)
+	{
+		printf("Input interest rate:");
+		scanf("%lf", &rate);
+		printf("Input term of the loan in days: ");
+		scanf("%d", &days);
+
+		interest = (double) principal * rate * days / 365;
+
+		printf("The interest amount is $%.2lf\n", interest);
+		
+		printf("\n");
+		printf("Input loan principal_amt (0 to quit): ");
+		scanf("%lf", &principal);	
+	}
+	
+	return 0;
+}
