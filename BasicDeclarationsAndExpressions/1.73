@@ -1,0 +1,21 @@
+#include <stdio.h>
+#include <stdbool.h>
+
+int main()
+{
+	float n;
+	bool done = false;
+	
+	printf("Input a value (negative):\n");
+	do
+	{
+		scanf("%f", &n);
+		if (n < 0)
+			done = true;
+	}
+	while (!done);
+	
+	printf("Absolute value: %g", -n);
+	
+	return 0;
+}
