@@ -1,0 +1,27 @@
+#include <stdio.h>
+#include <stdint.h>
+#include <float.h>
+#include <limits.h>
+
+int main(void)
+{
+	printf("Ranges for integer data types in C\n");
+	printf("-------------------------------------------------------------------\n");
+	printf("%-10s %25d %025d \n", "int8_t", INT8_MIN, INT8_MAX);
+	printf("%-10s %25d %25d \n", "int16_t", INT16_MIN, INT16_MAX);
+	printf("%-10s %25d %25d \n", "int32_t", INT32_MIN, INT32_MAX);
+	printf("%-10s %25lld %25lld \n", "int64_t", INT64_MIN, INT64_MAX);			
+	printf("%-10s %25u %25u \n", "uint8_t", 0, UINT8_MAX);
+	printf("%-10s %25u %25u \n", "uint16_t", 0, UINT16_MAX);
+	printf("%-10s %25u %25u \n", "uint32_t", 0, UINT32_MAX);
+	printf("%-10s %25llu %25llu \n", "uint64_t", 0, UINT64_MAX);
+	printf("\n");
+	printf("===================================================================\n");
+	printf("Ranges for real number data types in C\n");
+	printf("-------------------------------------------------------------------\n");
+	printf("%-10s %25.7g %25.7g \n", "float", FLT_MIN, FLT_MAX);
+	printf("%-10s %25.7g %25.7g \n", "double", DBL_MIN, DBL_MAX);
+	printf("%-10s %25.7Lg %25.7Lg \n", "long double", LDBL_MIN, LDBL_MAX);
+	
+	return 0;
+}
