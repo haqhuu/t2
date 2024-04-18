@@ -1,0 +1,26 @@
+#include <stdio.h>
+
+int main(void)
+{
+	int hour = -1, minute = -1;
+	double hourDegree, minuteDegree;
+	
+	while (hour < 0 || minute < 0 || hour > 23 || minute > 59)
+	{
+		printf("Input hour(h) and minute(m) (separated by a space):");
+		scanf("%d%d", &hour, &minute);	
+	}
+	
+	hour = hour%12;
+	
+	hourDegree = hour * 60 * (double) 0.5; 
+	hourDegree  = (hourDegree > 180) ? 360 - hourDegree : -hourDegree;
+	minuteDegree = (double) minute * 6; 
+	minuteDegree  = (minuteDegree > 180) ? 360 - minuteDegree : -minuteDegree;
+	
+	double degree = (hourDegree > minuteDegree) ? hourDegree - minuteDegree : minuteDegree - hourDegree;
+	
+	printf("At %d:%02d the angle is %.1lf degree", hour, minute, degree);
+	
+	return 0;
+}
