@@ -1,0 +1,52 @@
+#include <stdio.h>
+#include <stdbool.h>
+#include <math.h>
+
+bool prime(int n)
+{
+	for (int i = 2; i <= sqrt(n); i++)
+		if (n%i == 0)
+			return 0;
+	return n >= 2;
+}
+
+bool palindrome(int n)
+{
+	int m = 0, tmp = n;
+	while (tmp)
+	{
+		m = m*10 + tmp%10;
+		tmp /= 10;
+	}
+	return m == n;
+}
+
+int main(void)
+{
+	int x, y;
+	bool done = false;
+	
+	while (!done)
+	{
+		printf("Input two numbers (seprated by a space):");
+		scanf("%d%d", &x, &y );
+		if (!(x < y) && x > 10e9 - 1)
+			{ continue;};
+		if (x < 5)
+			{continue;}
+		if (y > 10e9)
+			{continue;}
+		done = true;
+	}
+	
+	printf("List of prime palindromes:\n");
+	for (int i = x; i <= y; i++ )
+	{
+		if (prime(i) && (palindrome(i)))
+		{
+			printf("%d\n", i);
+		}
+	}
+	
+	return 0;
+}
